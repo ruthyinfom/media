@@ -1,66 +1,103 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-    background: rgba(100, 95, 95, 0.253);
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    
 }
 
-.card {
-    width: 700px;
-    margin: auto;
-    padding: 25px;
-    background-color: rgb(200, 214, 245);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(111, 89, 196, 0.829);
-}
-
-h1 {
+/* Título */
+.container h1 {
     text-align: center;
     margin-bottom: 25px;
-    color: #333;
+    color: #4f46e5;
     font-size: 28px;
 }
 
-label {
-    color: #0e0d0d;
-    font-weight: bold;
+/* Card dos inputs */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
+.card div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Inputs */
 input[type="number"] {
     padding: 12px;
-    border: 2px solid #ddd;
+    border: 2px solid #d1d5db;
     border-radius: 10px;
-    outline: none;
-    transition: 0.3s;
+    font-size: 16px;
 }
 
+/* Efeito ao clicar */
 input[type="number"]:focus {
-    border-color: #7c3aed;
-    box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
+    border-color: #4f46e5;
+    outline: none;
+    box-shadow: 0 0 8px rgba(79, 70, 229, 0.4);
 }
 
-button {
+/* Botão */
+.botao {
+    margin-top: 10px;
+}
+
+input[type="button"] {
     width: 100%;
     padding: 14px;
     border: none;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    border-radius: 10px;
+    background-color: #4f46e5;
     color: white;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.botao:hover {
-    transform: scale(1.03);
-    opacity: 0.9;
+/* Hover do botão */
+input[type="button"]:hover {
+    background-color: #4338ca;
+    transform: scale(1.02);
 }
 
+/* Resultados */
+p {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #eef2ff;
+    border-left: 5px solid #4f46e5;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}

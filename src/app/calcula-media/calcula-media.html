@@ -1,7 +1,7 @@
 <div class="container">
-<div class="card"> 
 <h1>Calcula a média de uma disciplina</h1>
 <form>
+<div class="card">
     <div>
         <label for="">Bim 1</label>
         <input id="b1" type="number" #b1>
@@ -23,12 +23,14 @@
         <input id="Fn" type="number" #Fn>
     </div>
 
-    <div>
+    <div class="botao">
         <input type="button" value="Calcular"
                 (click)="calcularMediaParcial(+b1.value, +b2.value,
                 +b3.value, +b4.value, +Fn.value)">
     </div>
+</div>
 </form>
+
 
 @if (mediaParcial) {
 <div>
@@ -48,5 +50,4 @@
     <p>Situação = {{ situacao }}</p>
 </div>
 }
-</div>
 </div>
