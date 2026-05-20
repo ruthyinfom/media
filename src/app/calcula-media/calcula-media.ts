@@ -9,33 +9,46 @@ import { Component } from '@angular/core';
 export class CalculaMedia {
   protected mediaParcial: number | undefined
   protected mediaFinal: number | undefined
-  protected situação: string
+  protected situacao: string
 
   constructor() {
     this.mediaParcial = undefined
     this.mediaFinal = undefined
-    this.situação = ""
+    this.situacao = ""
   }
 
 
-  calcularMediaParcial(b1: number, b2: number, b3: number, b4: number) {
+  calcularMediaParcial(b1: number, b2: number, b3: number, b4: number, Fn: number) {
     this.mediaParcial = 
       (b1 * 2 + b2 * 2 + b3 * 3 + b4 * 3) / 10
+
+      if (this.mediaParcial >= 60) {
+        this.situacao = 'Aprovado'
+        this.mediaFinal = undefined
+      }
+      else {
+        this.calcularMediaFinal(Fn)
+      }
   }
 
   calcularMediaFinal(Fn: number) {
     const mp = this.mediaParcial
     let mf: number | undefined = undefined
 
-    if (mp) {
+    if (mp !== undefined) {
       mf =  (mp + Fn) / 2
     }
     this.mediaFinal = mf 
 
-    if (mf >= 60) {
-
-    } 
+    if (mf !== undefined) {
+      if (mf >= 60) {  
+      this.situacao = 'Aprovado'
+    }
+      else {
+      this.situacao = 'Reprovado'
+    }
   }
+  } 
 
   
 }

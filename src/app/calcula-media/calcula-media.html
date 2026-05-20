@@ -1,3 +1,5 @@
+<div class="container">
+<div class="card"> 
 <h1>Calcula a média de uma disciplina</h1>
 <form>
     <div>
@@ -17,13 +19,14 @@
         <input id="b4" type="number" #b4>
     </div>
      <div>
-        <label for="">Média Final</label>
+       <label for="">Nota da Avaliação Final</label>
         <input id="Fn" type="number" #Fn>
     </div>
+
     <div>
         <input type="button" value="Calcular"
-                (click)="calcularMediaParcial(+b1.value, 
-                +b2.value, +b3.value, +b4.value)">
+                (click)="calcularMediaParcial(+b1.value, +b2.value,
+                +b3.value, +b4.value, +Fn.value)">
     </div>
 </form>
 
@@ -32,3 +35,18 @@
     <p>Média parcial = {{mediaParcial}}</p>
 </div>
 }
+
+@if (mediaFinal) {
+<div>
+    <p>Média final = {{ mediaFinal }}</p>
+    <p>Situação = {{ situacao }}</p>
+</div>
+} 
+
+@if (situacao) {
+<div>
+    <p>Situação = {{ situacao }}</p>
+</div>
+}
+</div>
+</div>
