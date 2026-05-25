@@ -18,7 +18,7 @@ export class CalculaMedia {
   }
 
 
-  calcularMediaParcial(b1: number, b2: number, b3: number, b4: number, Fn: number) {
+  calcularMediaParcial(b1: number, b2: number, b3: number, b4: number) {
     this.mediaParcial = 
       (b1 * 2 + b2 * 2 + b3 * 3 + b4 * 3) / 10
 
@@ -27,8 +27,8 @@ export class CalculaMedia {
         this.mediaFinal = undefined
       }
       else {
-        this.calcularMediaFinal(Fn)
-      }
+      this.situacao = 'Reprovado'
+    }
   }
 
   calcularMediaFinal(Fn: number) {
@@ -49,6 +49,4 @@ export class CalculaMedia {
     }
   }
   } 
-
-  
 }

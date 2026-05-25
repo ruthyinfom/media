@@ -18,23 +18,34 @@
         <label for="">Bim 4</label>
         <input id="b4" type="number" #b4>
     </div>
-     <div>
-       <label for="">Nota da Avaliação Final</label>
-        <input id="Fn" type="number" #Fn>
-    </div>
-
     <div class="botao">
         <input type="button" value="Calcular"
                 (click)="calcularMediaParcial(+b1.value, +b2.value,
-                +b3.value, +b4.value, +Fn.value)">
+                +b3.value, +b4.value)">
     </div>
 </div>
 </form>
 
+@if ( mediaParcial && mediaParcial  < 60) {
+<form class="form-final">
+<div class="card">
+    <div>
+       <label for="">Nota da Avaliação Final</label>
+        <input id="Fn" type="number" #Fn>
+    </div>
+    
+    <div class="botao">
+        <input type="button" value="Calcular"
+                (click)="calcularMediaFinal(+Fn.value)">
+    </div>
+</div>
+</form>
+}
 
 @if (mediaParcial) {
 <div>
     <p>Média parcial = {{mediaParcial}}</p>
+
 </div>
 }
 

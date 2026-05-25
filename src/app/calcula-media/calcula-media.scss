@@ -68,11 +68,6 @@ input[type="number"]:focus {
     box-shadow: 0 0 8px rgba(79, 70, 229, 0.4);
 }
 
-/* Botão */
-.botao {
-    margin-top: 10px;
-}
-
 input[type="button"] {
     width: 100%;
     padding: 14px;
@@ -100,4 +95,7 @@ p {
     border-radius: 8px;
     font-size: 16px;
     font-weight: 500;
+}
+.form-final {
+    margin-top: 25px;
 }
